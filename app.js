@@ -4,7 +4,7 @@ const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const port = 3783;
 
-const db = new sqlite3.Database('./database.db'); // Create a file-based SQLite database
+const db = new sqlite3.Database('./database.db');
 
 db.serialize(() => {
     db.run('CREATE TABLE IF NOT EXISTS didCache (subdomain TEXT PRIMARY KEY, did TEXT, timestamp INTEGER)');
@@ -31,7 +31,7 @@ app.get('/set/:did', (req, res) => {
             console.error(err);
             res.status(500).send('Internal Server Error');
         } else {
-            res.send('Well-known endpoint served');
+            res.send(`DID set to ${did}`);
         }
     });
 });
