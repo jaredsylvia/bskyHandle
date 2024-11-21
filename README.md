@@ -79,9 +79,9 @@ Set or update the DID for the current subdomain.
 ---
 
 ## Had to do a manual thing on certbot
-
+````
 sudo certbot certonly --manual --preferred-challenges=dns --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.example.com
-
+````
 ## Example NGINX conf
 ````
 server {
