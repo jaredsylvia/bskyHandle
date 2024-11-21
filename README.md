@@ -83,6 +83,7 @@ Set or update the DID for the current subdomain.
 sudo certbot certonly --manual --preferred-challenges=dns --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.example.com
 
 ## Example NGINX conf
+````
 server {
     server_name ~^(.*)\.example\.com$ ;
     location / {
@@ -106,4 +107,4 @@ server {
     server_name ~^(.*)\.example\.com$ ;
     return 301 https://$host$request_uri;
 }
-
+````
